@@ -1,0 +1,227 @@
+/* Import "Permanent Marker" and "Rock Salt" fonts */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap');
+
+/* Global Styles */
+body {
+    background: linear-gradient(135deg, #ff7f50, #ff1493, #32cd32);
+    background-size: 400% 400%;
+    animation: gradient-animation 5s ease infinite;
+    color: white;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* Apply fun fonts */
+h1 {
+    font-family: 'Permanent Marker', cursive; /* Fun, handwritten font for h1 */
+    font-size: 4em;
+    text-shadow: 4px 4px 12px rgba(255, 255, 255, 0.6);
+    margin: 20px 0;
+    color: #ff1493; /* Vibrant color for the heading */
+    letter-spacing: 2px;
+}
+
+/* Input and buttons container */
+.date-box {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 15px;
+}
+
+/* Task input field and buttons */
+#taskInput {
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    border: none;
+    width: 250px;
+    max-width: 80vw;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    font-family: 'Rock Salt', cursive; /* Handwritten style for placeholder */
+}
+
+#taskInput::placeholder {
+    color: #ff1493;
+    font-style: italic;
+    font-family: 'Rock Salt', cursive; /* Fun handwritten font for placeholder */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: #ff1493;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Rock Salt', cursive; /* Handwritten font for buttons */
+}
+
+button:hover {
+    background-color: #ff6347;
+    transform: scale(1.05);
+}
+
+/* Task list styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+    background: linear-gradient(135deg, #ff7f50, #ff1493, #32cd32);
+    background-size: 400% 400%;
+    animation: gradient-animation 5s ease infinite;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Animate the gradient for a fun effect */
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+li {
+    padding: 15px;
+    margin: 5px 0;
+    background-color: #fff;
+    background: linear-gradient(45deg, #ff6ec7, #f7a8b8, #ffd700);
+    border: 2px solid #ff1493;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-family: 'Rock Salt', cursive; /* Update font to match with placeholder */
+}
+
+/* Completed task style */
+.complete {
+    text-decoration: line-through;
+    color: grey;
+    font-style: italic;
+    font-family: 'Rock Salt', cursive; /* Maintain consistency with task font */
+}
+
+/* Style for completed tasks that feel more relaxed */
+li.complete {
+    background-color: #e0e0e0; /* Light grey background for completed tasks */
+    color: #888; /* Lighter text color for completed tasks */
+}
+
+/* Delete button style */
+.deleteButton {
+    background-color: #ff1493;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Hover effect for delete button */
+.deleteButton:hover {
+    background-color: #ff6347;
+    transform: scale(1.2);
+}
+
+/* Active delete button state */
+.deleteButton:active {
+    background-color: #ff4500;
+    transform: scale(1);
+}
+
+/* Clear All button style */
+#clearAllButton {
+    background-color: #32cd32;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#clearAllButton:hover {
+    background-color: #28a745;
+    transform: scale(1.05);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3em; /* Smaller heading on tablets */
+    }
+
+    #taskInput {
+        width: 200px; /* Adjust input width */
+        font-size: 1em; /* Smaller font size for input */
+    }
+
+    button {
+        font-size: 1em; /* Smaller font size for buttons */
+    }
+
+    ul {
+        width: 95%; /* Adjust list width */
+    }
+
+    li {
+        font-size: 1em; /* Smaller task list font size */
+        padding: 12px; /* Adjust padding */
+    }
+
+    #clearAllButton, .deleteButton {
+        font-size: 1em; /* Smaller font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5em; /* Even smaller heading for mobile */
+    }
+
+    #taskInput {
+        width: 80%; /* Input takes more width on small screens */
+        font-size: 0.9em; /* Smaller font size for input */
+    }
+
+    button {
+        font-size: 1em; /* Consistent font size for buttons */
+    }
+
+    ul {
+        width: 95%; /* Adjust list width */
+    }
+
+    li {
+        font-size: 0.9em; /* Smaller task list font size */
+        padding: 10px; /* Adjust padding */
+    }
+
+    #clearAllButton, .deleteButton {
+        font-size: 0.9em; /* Smaller font size for smaller screens */
+    }
+}
